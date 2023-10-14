@@ -1,0 +1,62 @@
+:root {
+
+  --clr-dark: #011728;
+  --clr-light: #FFFFFF;
+
+
+  --clr-primary: #FCFFFA;
+  --clr-secondary: #2EC2B3;
+  --clr-accent: #E71D34;
+
+  --clr-gradient: linear-gradient(to right, var(--clr-dark), var(--clr-light));
+
+
+  --ff-FiraCode: 'Fira Code', monospace;
+  --ff-Montserrat: 'Montserrat', sans-serif;
+}
+
+/* Reset Style */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Global Styles */
+
+body {
+  background-color: var(--clr-dark);
+  color: var(--clr-primary);
+  font-family: var(--ff-Montserrat);
+}
+
+.text-gradient {
+  background-image: var(--clr-gradient);
+  background-clip: text;
+
+  /* Safari and Chrome */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* mozilla */
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
