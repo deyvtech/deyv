@@ -51,15 +51,15 @@ header {
 
 aside {
     position: fixed;
-    flex-basis: 20%;
-    width: calc(100% - 80%);
+    flex-basis: 250px;
+    width: 250px;
     height: 100%;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    box-shadow: 10px 0px 50px -30px #000;
+    box-shadow: -7px 0 15px 0px #000;
 
     .menu {  
         filter: grayscale(1);
@@ -81,7 +81,7 @@ aside {
 /* Content */
 
 .content {
-    flex-basis: 80%;
-    margin-left: 20%;
+    flex-basis: 100%;
+    margin-left: 250px;
     height: 150vh;
 }
