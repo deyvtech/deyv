@@ -8,7 +8,9 @@ import arrow from "./public/images/Arrow.svg";
 import { icons } from "./data";
 
 
-
+function getIconUrl(name) {
+  return new URL(`./public/icon/${name}.png`, import.meta.url).href
+}
 
 function createHTMLContent() {
   const root = document.getElementById("root");
@@ -24,7 +26,7 @@ function createHTMLContent() {
   <div class='header__container'>
   <ul class='icons__container'>
     ${icons.map(icon => (
-      `<li class='icon ${icon.id}'><a href="${icon.url}"><img src=${icon.urlFolder} alt="" /></a></li>`
+      `<li class='icon ${icon.id}'><a href="${icon.url}"><img src=${getIconUrl(icon.id)} alt="" /></a></li>`
     )).join('')}
   </ul>
   <img src="${arrow}" alt="" class='arrow'/>
