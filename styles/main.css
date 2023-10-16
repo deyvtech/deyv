@@ -3,59 +3,85 @@
 }
 
 /* Header */
-
 header {
     width: 100%;
     position: relative;
+
+    & .header__container {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    
+        & .icons__container {
+            display: flex;
+            gap: 20px;
+        
+            & .icon {
+                opacity: .75;
+                max-width: 40px;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+            
+                & img {
+                    filter: grayscale(1);
+                }
+            
+                &:hover img{
+                    filter: unset;
+                    transition: all .3s ease-in-out;
+                } 
+               
+            }
+        }
+    
+        & .arrow {
+            width: 100%;
+            max-width: 200px;
+        }
+    
+    }
 }
 
-.header__container {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    align-items: center;
-    height: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
 
-}
-
-.arrow {
-    width: 100%;
-    max-width: 200px;
-}
-.icons__container {
-    display: flex;
-    gap: 20px;
-}
-
-.icon {
-    opacity: .75;
-    max-width: 40px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-
-}
-
-.icon img {
-    filter: grayscale(1);
-}
-.icon:hover img{
-    filter: unset;
-    transition: all .3s ease-in-out;
-}
-
+/* Sidebar */
 
 aside {
     position: fixed;
     flex-basis: 20%;
     width: calc(100% - 80%);
     height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 10px 0px 50px -30px #000;
+
+    .menu {  
+        filter: grayscale(1);
+        width: 40px;
+        object-fit: contain;
+        object-position: center;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover{
+            filter: unset;
+            transition: all ease-in-out;
+
+        }
+    }
 }
+
+
+/* Content */
 
 .content {
     flex-basis: 80%;
     margin-left: 20%;
     height: 150vh;
 }
-

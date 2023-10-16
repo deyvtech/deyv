@@ -6,7 +6,7 @@ import "./styles/main.css";
 
 import arrow from "./public/images/Arrow.svg";
 import { icons } from "./data";
-
+import menu from "./public/icon/menu.png"
 
 function getIconUrl(name) {
   return new URL(`./public/icon/${name}.png`, import.meta.url).href
@@ -14,10 +14,8 @@ function getIconUrl(name) {
 
 function createHTMLContent() {
   const root = document.getElementById("root");
-  const createMain = document.createElement("main");
-  const createHeader = document.createElement("header");
-  const createFooter = document.createElement("footer");
-  const createSidebar = document.createElement("aside");
+  
+
 
   const element =
   `
@@ -31,6 +29,11 @@ function createHTMLContent() {
 
   root.insertAdjacentHTML('afterbegin', element)
 
+
+  const header = document.querySelector("header");
+  const sidebar = document.querySelector('aside')
+
+  // Header html
   const headerHTML = `
   <div class='header__container'>
   <ul class='icons__container'>
@@ -42,8 +45,16 @@ function createHTMLContent() {
   </div>
   `;
 
-  const header = document.querySelector("header");
   header.insertAdjacentHTML("afterbegin", headerHTML);
+
+  // Aside html
+
+  const sidebarHTML = `
+  <img class='menu' src="${menu}"></img>
+  `
+
+  sidebar.insertAdjacentHTML('afterbegin', sidebarHTML)
+
 }
 
 createHTMLContent();
