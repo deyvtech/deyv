@@ -13,6 +13,24 @@
 
   --ff-FiraCode: 'Fira Code', monospace;
   --ff-Montserrat: 'Montserrat', sans-serif;
+
+}
+
+/* Light & Dark mode */
+.theme {
+  background: var(--clr-dark);
+  color: var(--clr-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .theme {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+  }
+
+  body {
+    background-color: var(--clr-dark);
+  }
 }
 
 /* Reset Style */
@@ -43,7 +61,7 @@ img {
 /* Global Styles */
 
 body {
-  background-color: var(--clr-dark);
+  /* background-color: var(--clr-dark); */
   color: var(--clr-primary);
   font-family: var(--ff-Montserrat);
 }
@@ -60,3 +78,4 @@ body {
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
 }
+
