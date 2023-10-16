@@ -4,12 +4,13 @@
 import "./styles/global.css";
 import "./styles/main.css";
 
-import arrow from "./public/images/Arrow.svg";
-import { icons } from "./data";
-import menu from "./public/icon/menu.png"
+import arrow from "./images/Arrow.svg";
+import { icons, menus } from "./data";
+import menu from "./icon/menu.png"
+import close from './icon/close.png'
 
 function getIconUrl(name) {
-  return new URL(`./public/icon/${name}.png`, import.meta.url).href
+  return new URL(`./icon/${name}.png`, import.meta.url).href
 }
 
 function createHTMLContent() {
@@ -50,7 +51,12 @@ function createHTMLContent() {
   // Aside html
 
   const sidebarHTML = `
-  <img class='menu' src="${menu}"></img>
+  <img class='menuBtn' src="${menu}"></img>
+  <ul class='menus__container'>
+    ${menus.map(menu => (
+      `<li class="${menu.class}"><a href=""><span class='code'>< </span>${menu.label}<span class='code'> /></span></a></li>`
+    )).join('')}
+  </ul>
   `
 
   sidebar.insertAdjacentHTML('afterbegin', sidebarHTML)
@@ -58,3 +64,18 @@ function createHTMLContent() {
 }
 
 createHTMLContent();
+
+const hamburger = document.querySelector('.menuBtn')
+function toggleMenu(e) {
+  e.preventDefault()
+  document.querySelector('.menus__container').classList.toggle('active')
+  hamburger.classList.toggle('active')
+  if (hamburger.classList.contains('active')) {
+    hamburger.setAttribute('src', close)
+  } else {
+    hamburger.setAttribute('src', menu)
+    
+  }
+}
+
+hamburger.addEventListener('click', toggleMenu)

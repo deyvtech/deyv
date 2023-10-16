@@ -25,3 +25,28 @@ export const icons = [
         id: 'linkedin'
     },
 ];
+
+
+export const menus = [
+    {
+        class: 'home',
+        label: 'Home',
+        url: ''
+    },
+    {
+        class: 'about',
+        label: 'About',
+        url: ''
+    },
+    {
+        class: 'skills',
+        label: 'Skills',
+        url: ''
+    },
+    {
+        class: 'projects',
+        label: 'Projects',
+        url: ''
+    },
+
+]

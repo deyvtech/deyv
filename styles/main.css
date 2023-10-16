@@ -22,7 +22,7 @@ header {
         
             & .icon {
                 opacity: .75;
-                max-width: 40px;
+                max-width: 35px;
                 cursor: pointer;
                 transition: all .3s ease-in-out;
             
@@ -41,8 +41,13 @@ header {
         & .arrow {
             width: 100%;
             max-width: 200px;
+            transition: max-width .3s ease-in-out;
         }
     
+    }
+
+    & .header__container:hover .arrow {
+        max-width: 240px;
     }
 }
 
@@ -61,19 +66,86 @@ aside {
 
     box-shadow: -7px 0 15px 0px #000;
 
-    .menu {  
+    & .menuBtn {  
         filter: grayscale(1);
-        width: 40px;
+        width: 35px;
         object-fit: contain;
         object-position: center;
         cursor: pointer;
         transition: all .3s ease-in-out;
+        margin-right: 100px;
 
         &:hover{
             filter: unset;
-            transition: all ease-in-out;
+            transition: all .3s ease-in-out;
 
         }
+    }
+
+    & .menuBtn.active {
+        transform: rotate(-90deg) scale(1);
+        transition: all .4s ease-in-out;
+    }
+
+    & .menus__container {
+        position: absolute;
+        overflow: hidden;
+       pointer-events: none;
+       width: 130px;
+       right: 0px;
+        
+        & li {
+         
+            padding: 10px 0px;
+            transform-origin: top left;
+            transform: rotate(90deg);
+            transition: all .3s ease-in;
+           
+        }
+        & li a {
+            transition: all .5s ease-in-out;
+        }
+        & li:hover a{
+            letter-spacing: 2px;
+            transition: all .5s ease-in-out;
+            color: var(--clr-secondary);
+        }
+        & .code {
+            color: var(--clr-secondary);
+            font-weight: 600;
+        }
+
+    }
+
+    & .menus__container.active {
+        opacity: 1;
+        position: absolute;
+        overflow: unset;
+        width: 130px;
+        height: unset; 
+        pointer-events: unset;
+    
+
+        & li {
+            transform: rotate(0);
+        }
+
+        
+         & .home {
+            transition: transform .2s ease-in;
+        }
+        & .about {
+            transition: transform .4s ease-in;
+
+        }
+        & .skills {
+            transition: transform .6s ease-in;
+
+        }
+        & .projects {
+            transition: transform .8s ease-in;
+           
+        } 
     }
 }
 
@@ -84,4 +156,6 @@ aside {
     flex-basis: 100%;
     margin-left: 250px;
     height: 150vh;
+
+   
 }
