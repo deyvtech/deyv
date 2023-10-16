@@ -17,10 +17,19 @@ function createHTMLContent() {
   const createMain = document.createElement("main");
   const createHeader = document.createElement("header");
   const createFooter = document.createElement("footer");
+  const createSidebar = document.createElement("aside");
 
-  root.appendChild(createMain).classList.add("main-container");
-  root.insertAdjacentElement("afterbegin", createHeader);
-  root.insertAdjacentElement("beforeend", createFooter);
+  const element =
+  `
+  <aside></aside>
+  <div class='content'>
+  <header></header>
+  <main></main>
+  <footer></footer>
+  </div>
+  `
+
+  root.insertAdjacentHTML('afterbegin', element)
 
   const headerHTML = `
   <div class='header__container'>
@@ -35,13 +44,6 @@ function createHTMLContent() {
 
   const header = document.querySelector("header");
   header.insertAdjacentHTML("afterbegin", headerHTML);
-
-  const mainEl = document.querySelector(".main-container");
-  const html = `
-  <div class="sidebar"></div>
-  <div class="content"></div>
-  `;
-  mainEl.insertAdjacentHTML("afterbegin", html);
 }
 
 createHTMLContent();

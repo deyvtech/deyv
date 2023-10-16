@@ -1,3 +1,7 @@
+#root {
+    display: flex;
+}
+
 /* Header */
 
 header {
@@ -12,6 +16,8 @@ header {
     align-items: center;
     height: 100%;
     padding-top: 50px;
+    padding-bottom: 50px;
+
 }
 
 .arrow {
@@ -38,3 +44,18 @@ header {
     filter: unset;
     transition: all .3s ease-in-out;
 }
+
+
+aside {
+    position: fixed;
+    flex-basis: 20%;
+    width: calc(100% - 80%);
+    height: 100%;
+}
+
+.content {
+    flex-basis: 80%;
+    margin-left: 20%;
+    height: 150vh;
+}
+
