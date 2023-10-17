@@ -15,32 +15,34 @@ function getIconUrl(name) {
 
 function createHTMLContent() {
   const root = document.getElementById("root");
-  
 
-
-  const element =
-  `
+  const element = `
   <aside></aside>
   <div class='content'>
   <header></header>
   <main></main>
   <footer></footer>
   </div>
-  `
+  `;
 
-  root.insertAdjacentHTML('afterbegin', element)
-
+  root.insertAdjacentHTML("afterbegin", element);
 
   const header = document.querySelector("header");
-  const sidebar = document.querySelector('aside')
+  const sidebar = document.querySelector("aside");
+  const main = document.querySelector("main");
 
   // Header html
   const headerHTML = `
   <div class='header__container'>
   <ul class='icons__container'>
-    ${icons.map(icon => (
-      `<li class='icon ${icon.id}'><a href="${icon.url}"><img src=${getIconUrl(icon.id)} alt="" /></a></li>`
-    )).join('')}
+    ${icons
+      .map(
+        (icon) =>
+          `<li class='icon ${icon.id}'><a href="${
+            icon.url
+          }"><img src=${getIconUrl(icon.id)} alt="" /></a></li>`
+      )
+      .join("")}
   </ul>
   <img src="${arrow}" alt="" class='arrow'/>
   </div>
@@ -53,29 +55,71 @@ function createHTMLContent() {
   const sidebarHTML = `
   <img class='menuBtn' src="${menu}"></img>
   <ul class='menus__container'>
-    ${menus.map(menu => (
-      `<li class="${menu.class}"><a href=""><span class='code'>< </span>${menu.label}<span class='code'> /></span></a></li>`
-    )).join('')}
+    ${menus
+      .map(
+        (menu) =>
+          `<li class="${menu.class}"><a href=""><span class='code'>< </span>${menu.label}<span class='code'> /></span></a></li>`
+      )
+      .join("")}
   </ul>
+  `;
+
+  sidebar.insertAdjacentHTML("afterbegin", sidebarHTML);
+
+  // Main html
+  const mainHTML =
   `
-
-  sidebar.insertAdjacentHTML('afterbegin', sidebarHTML)
-
+  <h1 class="hero__title">Hi there, My name is <br /><span class='hero__name'>Dave Lexter Supsup</span></h1>
+  <p class='hero__intro'>I am a web developer from Philippines, Crafting websites in Javascript is my passion. I love to learn new things and try out different programming languages on projects which require it!</p>
+  <a href="/contact" class="hero__btn">Contact me</a>
+  `
+  main.insertAdjacentHTML("afterbegin", mainHTML);
+    
 }
 
 createHTMLContent();
 
-const hamburger = document.querySelector('.menuBtn')
+// Hamburget function
+const hamburger = document.querySelector(".menuBtn");
 function toggleMenu(e) {
-  e.preventDefault()
-  document.querySelector('.menus__container').classList.toggle('active')
-  hamburger.classList.toggle('active')
-  if (hamburger.classList.contains('active')) {
-    hamburger.setAttribute('src', close)
+  e.preventDefault();
+  document.querySelector(".menus__container").classList.toggle("active");
+  hamburger.classList.toggle("active");
+  if (hamburger.classList.contains("active")) {
+    hamburger.setAttribute("src", close);
   } else {
-    hamburger.setAttribute('src', menu)
-    
+    hamburger.setAttribute("src", menu);
   }
-}
+};
+hamburger.addEventListener('click', toggleMenu);
 
-hamburger.addEventListener('click', toggleMenu)
+
+
+// // Implementing sticky nav
+// function stickyNav() {
+
+//   const header = document.querySelector('header')
+
+//   function sticky(entries, observer) {
+
+//     const [entry] = entries
+//     if (!entry.isIntersecting) {
+//       header.style.position = 'fixed'
+//       header.style.left = '0'
+//     } else {
+//     }
+//     console.log(entry)
+  
+//   }
+//   const options = {
+//     root: null,
+//     threshold: 0,
+//   }
+
+
+//   const headerObserver = new IntersectionObserver(sticky, options)
+//   headerObserver.observe(header)
+  
+// }
+
+// stickyNav()

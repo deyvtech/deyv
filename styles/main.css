@@ -5,7 +5,11 @@
 /* Header */
 header {
     width: 100%;
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-dark);
+    z-index: 9999;
 
     & .header__container {
         display: flex;
@@ -68,7 +72,7 @@ aside {
 
     & .menuBtn {  
         filter: grayscale(1);
-        width: 35px;
+        width: 30px;
         object-fit: contain;
         object-position: center;
         cursor: pointer;
@@ -84,6 +88,8 @@ aside {
 
     & .menuBtn.active {
         transform: rotate(-90deg) scale(1);
+        -webkit-transform: rotate(-90deg) scale(1);
+        -moz-transform: rotate(-90deg) scale(1);
         transition: all .4s ease-in-out;
     }
 
@@ -99,6 +105,8 @@ aside {
             padding: 10px 0px;
             transform-origin: top left;
             transform: rotate(90deg);
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
             transition: all .3s ease-in;
            
         }
@@ -128,6 +136,8 @@ aside {
 
         & li {
             transform: rotate(0);
+            -webkit-transform: rotate(0);
+            -moz-transform: rotate(0);
         }
 
         
@@ -148,6 +158,61 @@ aside {
         } 
     }
 }
+
+/* Main */
+main {
+    max-width: 60%;
+    margin: 0 auto;
+    padding-top: 50px;
+    
+    & .hero__title {
+        font-family: var(--ff-Dosis);
+  
+        line-height: 72px;
+        font-size: 64px;
+
+        & .hero__name {
+            font-size: 72px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            &::before{
+                content: '';
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 35px;
+                background-color: var(--clr-accent);
+                z-index: -1;
+                bottom: 0;
+            }
+        }
+    }
+
+    & .hero__intro {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+
+    & a.hero__btn {
+        width: max-content;
+        display: block;
+        margin-top: 30px;
+        padding: 15px 20px; 
+        font-weight: 500;
+
+        color: var(--clr-dark);
+        background-color: var(--clr-secondary);
+        box-shadow: 7px 7px 0px 0px var(--clr-accent);
+        transition: box-shadow .3s ease-in-out;
+
+        &:hover {
+            box-shadow: 0px 0px 0px 0px var(--clr-accent);
+            transition: box-shadow .3s ease-in-out;
+        }
+    }
+}
+
 
 
 /* Content */
