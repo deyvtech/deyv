@@ -53,6 +53,7 @@ function createHTMLContent() {
   // Aside html
 
   const sidebarHTML = `
+  <div class="logo"><a href="/"><img src="/icon/DT.svg" alt="logo" /></a></div>
   <img class='menuBtn' src="${menu}"></img>
   <ul class='menus__container'>
     ${menus
