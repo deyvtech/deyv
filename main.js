@@ -8,6 +8,7 @@ import arrow from "./images/Arrow.svg";
 import { icons, menus } from "./data";
 import menu from "./icon/menu.png"
 import close from './icon/close.png'
+import logo from './icon/DT.svg'
 
 function getIconUrl(name) {
   return new URL(`./icon/${name}.png`, import.meta.url).href
@@ -53,7 +54,7 @@ function createHTMLContent() {
   // Aside html
 
   const sidebarHTML = `
-  <div class="logo"><a href="/"><img src="/icon/DT.svg" alt="logo" /></a></div>
+  <div class="logo"><a href="/"><img src="${logo}" alt="logo" /></a></div>
   <img class='menuBtn' src="${menu}"></img>
   <ul class='menus__container'>
     ${menus
