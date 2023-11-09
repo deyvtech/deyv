@@ -50,3 +50,10 @@ export const menus = [
     },
 
 ]
+
+export const introductionContent = {
+    greeting: 'Hi there, My name is ',
+    name: 'Dave Lexter Supsup',
+    intro: 'I am a web developer from Philippines, Crafting websites in Javascript is my passion. I love to learn new things and try out different programming languages on projects which require it!',
+    btn: 'Contact me'
+}

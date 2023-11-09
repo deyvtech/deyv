@@ -5,7 +5,7 @@ import "./styles/global.css";
 import "./styles/main.css";
 
 import arrow from "./images/Arrow.svg";
-import { icons, menus } from "./data";
+import { icons, menus, introductionContent } from "./data";
 import menu from "./icon/menu.png"
 import close from './icon/close.png'
 import logo from './icon/DT.svg'
@@ -71,9 +71,9 @@ function createHTMLContent() {
   // Main html
   const mainHTML =
   `
-  <h1 class="hero__title">Hi there, My name is <br /><span class='hero__name'>Dave Lexter Supsup</span></h1>
-  <p class='hero__intro'>I am a web developer from Philippines, Crafting websites in Javascript is my passion. I love to learn new things and try out different programming languages on projects which require it!</p>
-  <a href="/contact" class="hero__btn">Contact me</a>
+  <h1 class="hero__title">${introductionContent.greeting}<br /><span class='hero__name'>${introductionContent.name}</span></h1>
+  <p class='hero__intro'>${introductionContent.intro}</p>
+  <a href="/contact" class="hero__btn">${introductionContent.btn}</a>
   `
   main.insertAdjacentHTML("afterbegin", mainHTML);
     
