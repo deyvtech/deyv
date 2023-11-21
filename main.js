@@ -71,9 +71,11 @@ function createHTMLContent() {
   // Main html
   const mainHTML =
   `
+  <section id="introduction">
   <h1 class="hero__title">${introductionContent.greeting}<br /><span class='hero__name'>${introductionContent.name}</span></h1>
   <p class='hero__intro'>${introductionContent.intro}</p>
   <a href="/contact" class="hero__btn">${introductionContent.btn}</a>
+  </section>
   `
   main.insertAdjacentHTML("afterbegin", mainHTML);
     

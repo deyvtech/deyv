@@ -32,11 +32,16 @@ header {
             
                 & img {
                     filter: grayscale(1);
+                    border-radius: 50%;
                 }
             
                 &:hover img{
                     filter: unset;
                     transition: all .3s ease-in-out;
+                    box-shadow: 1px 1px 10px 2px var(--clr-secondary);
+                    -webkit-box-shadow: 1px 1px 10px 2px var(--clr-secondary);
+                    -moz-box-shadow: 1px 1px 10px 2px var(--clr-secondary);
+                    
                 } 
                
             }
@@ -70,11 +75,13 @@ aside {
     align-items: center;
 
     box-shadow: -7px 0 15px 0px #000;
+    -webkit-box-shadow: -7px 0 15px 0px #000;
+    -moz-box-shadow: -7px 0 15px 0px #000;
 
 
     & .logo {
     position: absolute;
-    top: 20px;
+    top: 50px;
     max-width: 220px;
 
         & img {
@@ -156,16 +163,12 @@ aside {
          & .home {
             transition: transform .2s ease-in;
         }
-        & .about {
+        & .skills {
             transition: transform .4s ease-in;
 
         }
-        & .skills {
-            transition: transform .6s ease-in;
-
-        }
         & .projects {
-            transition: transform .8s ease-in;
+            transition: transform .6s ease-in;
            
         } 
     }

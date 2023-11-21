@@ -34,11 +34,6 @@ export const menus = [
         url: ''
     },
     {
-        class: 'about',
-        label: 'About',
-        url: ''
-    },
-    {
         class: 'skills',
         label: 'Skills',
         url: ''
