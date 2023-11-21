@@ -2,6 +2,15 @@
     display: flex;
 }
 
+#loader {
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    z-index: 9999999;
+    display: block;
+    position: absolute;
+}
+
 /* Header */
 header {
     width: 100%;
@@ -179,9 +188,14 @@ main {
     max-width: 60%;
     margin: 0 auto;
     padding-top: 50px;
+
+    & section#introduction {
+        animation: onShow 2s ease;
+    }
     
     & .hero__title {
         font-family: var(--ff-Dosis);
+
   
         line-height: 72px;
         font-size: 64px;
@@ -191,6 +205,7 @@ main {
             font-weight: 700;
             position: relative;
             z-index: 1;
+
             &::before{
                 content: '';
                 display: block;
@@ -207,6 +222,7 @@ main {
     & .hero__intro {
         margin-top: 30px;
         font-size: 22px;
+
     }
 
     & a.hero__btn {
@@ -215,6 +231,7 @@ main {
         margin-top: 30px;
         padding: 15px 20px; 
         font-weight: 500;
+        animation: bouncing 2s ease infinite;
 
         color: var(--clr-dark);
         background-color: var(--clr-secondary);
@@ -236,7 +253,30 @@ main {
 .content {
     flex-basis: 100%;
     margin-left: 250px;
-    height: 150vh;
+}
 
-   
+
+/* Animation */
+
+@keyframes bouncing {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes onShow {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
