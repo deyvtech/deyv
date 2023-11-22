@@ -1,18 +1,16 @@
-"use strict";
-
 // import assets
-import { icons, menus, introductionContent } from "../data";
-import logo from '../icon/DT.svg'
-import menu from "../icon/menu.png"
+import { icons, menus, introContent } from "../data";
+import logo from "../icon/DT.svg";
+import menu from "../icon/menu.png";
 import arrow from "../images/Arrow.svg";
 
 function getIconUrl(name) {
-    return new URL(`../icon/${name}.png`, import.meta.url).href
+  return new URL(`../icon/${name}.png`, import.meta.url).href;
 }
 
 export const header = function () {
   const headerEl = document.querySelector("header");
-    const headerHTML = `
+  const headerHTML = `
     <div class='header__container'>
     <ul class='icons__container'>
       ${icons
@@ -27,14 +25,14 @@ export const header = function () {
     <img src="${arrow}" alt="" class='arrow'/>
     </div>
     `;
-  
-    headerEl.insertAdjacentHTML("afterbegin", headerHTML);
-}
+
+  headerEl.insertAdjacentHTML("afterbegin", headerHTML);
+};
 
 export const sidebar = function () {
   const sidebarEl = document.querySelector("aside");
 
-    const sidebarHTML = `
+  const sidebarHTML = `
     <div class="logo"><a href="/"><img src="${logo}" alt="logo" /></a></div>
     <img class='menuBtn' src="${menu}"></img>
     <ul class='menus__container'>
@@ -46,23 +44,21 @@ export const sidebar = function () {
         .join("")}
     </ul>
     `;
-    
-    sidebarEl.insertAdjacentHTML("afterbegin", sidebarHTML);
 
-}
-
+  sidebarEl.insertAdjacentHTML("afterbegin", sidebarHTML);
+};
 
 export const main = function () {
   const mainEl = document.querySelector("main");
 
-    const mainHTML =
-  `
+  const mainHTML = `
   <section id="introduction">
-  <h1 class="hero__title">${introductionContent.greeting}<br /><span class='hero__name'>${introductionContent.name}</span></h1>
-  <p class='hero__intro'>${introductionContent.intro}</p>
-  <a href="#" class="hero__btn">${introductionContent.btn}</a>
+  <h1 class="hero__title">${introContent.greeting}<br /><span class='hero__name'>${introContent.name}</span></h1>
+  <p class='hero__intro'></p>
+  <a href="#" class="hero__btn">${introContent.btn}</a>
   </section>
-  `
+  `;
   mainEl.insertAdjacentHTML("afterbegin", mainHTML);
-  
-}
+};
+
+

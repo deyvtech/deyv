@@ -231,7 +231,6 @@ main {
         margin-top: 30px;
         padding: 15px 20px; 
         font-weight: 500;
-        animation: bouncing 2s ease infinite;
 
         color: var(--clr-dark);
         background-color: var(--clr-secondary);
@@ -239,9 +238,12 @@ main {
         transition: all .3s ease-in-out;
 
         &:hover {
-            transform: scale(.9);
             box-shadow: 0px 0px 0px 0px var(--clr-accent);
             transition: all .3s ease-in-out;
+        }
+
+        &:active {
+            transform: scale(.9);
         }
     }
 }

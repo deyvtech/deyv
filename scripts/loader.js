@@ -1,5 +1,3 @@
-"use strict"
-
 export default function () {
     const loader = document.querySelector('#loader')
 

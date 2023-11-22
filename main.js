@@ -1,13 +1,11 @@
-"use strict";
-
 // import CSS
 import "./styles/global.css";
 import "./styles/main.css";
 
-// import modules 
-import loader from './scripts/loader'
+// import modules
+import loader from "./scripts/loader";
 import { sidebar, header, main } from "./scripts/htmlDOM";
-import hamburger from "./scripts/hamburger";
+import { hamburger, handleTypeWriter } from "./scripts/animation";
 
 function createHTMLContent() {
   const root = document.getElementById("root");
@@ -22,14 +20,13 @@ function createHTMLContent() {
   root.insertAdjacentHTML("afterbegin", element);
 
   // Header html
-  header()
+  header();
   // Aside html
-  sidebar()
+  sidebar();
   // Main html
-  main()
+  main();
 }
 
 createHTMLContent();
-hamburger()
-
-
+hamburger();
+handleTypeWriter();
