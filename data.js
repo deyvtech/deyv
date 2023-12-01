@@ -1,4 +1,4 @@
-export const icons = [
+export const socialIcons = [
     {
         url: '',
         label: 'Discord',
@@ -24,6 +24,30 @@ export const icons = [
         label: 'Linked-in',
         id: 'linkedin'
     },
+];
+
+
+export const skillsIcon = [
+    {
+        label: 'html',
+        url: 'html-icon',
+    },
+    {
+        label: 'css',
+        url: 'css-icon',
+    },
+    {
+        label: 'javascript',
+        url: 'javascript-icon',
+    },
+    {
+        label: 'tailwind',
+        url: 'tailwind-icon',
+    },
+    {
+        label: 'wordpress',
+        url: 'wordpress-icon',
+    }
 ];
 
 
